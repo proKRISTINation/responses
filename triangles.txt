@@ -1,0 +1,30 @@
+Proof: 
+
+Assuming the length of the stick is 'S' and that the 2 breaking points are called 'a' and 'b'. The pieces will form a triangle if the length of each individual piece is less than the sum of the length of the other 2 pieces. 0 < a < b < S and that a < S/2 and b > S/2. Thus, b < a + S/2. The probability is the number of favorable outcomes divided by the total number of outcomes. Therefore, ((S/2) * (S/2))/(S*S) = 1/4.
+
+Program:
+
+S = Length of stick 
+a = breaking point 1
+b = breaking point 2
+x = 0 /* variable to count successful number of triangles */
+t = 0 /* variable to count trials */
+
+while t < 10,000
+	/* Determine the breaking points"
+	a = random number between 0 and S 
+	b = random number between 0 and S
+	a != b and a < b
+	
+	/*determine length of size*/
+	side1  = a
+	side2 = (b - a)
+		side3 = S - side2 or S - side1
+	side1 < S/2 and side2 > S/2 
+
+	if side3 < (side1 +side2)
+		x = x+1
+	t = t + 1
+print x /t
+
+
